@@ -1,5 +1,6 @@
 import { Button } from "@heroui/button"
 import Image from "next/image"
+import Link from "next/link"
 
 const Hero = () => {
   return (
@@ -14,9 +15,11 @@ const Hero = () => {
             aventuras do seu filho e despertam sua paixão pela leitura. Leva
             apenas alguns segundos!
           </p>
-          <Button size="lg" color="primary" className="mt-5">
-            Criar História
-          </Button>
+          <Link href={"/create-story"}>
+            <Button size="lg" color="primary" className="mt-5">
+              Criar História
+            </Button>
+          </Link>
         </div>
         <div>
           <Image src={"/hero.png"} alt="Hero" width={700} height={400} />
