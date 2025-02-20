@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Nunito } from "next/font/google";
+import { Nunito, Permanent_Marker } from "next/font/google";
 import "./globals.css";
 
 import Provider from "./provider";
 
 const MyAppFont = Nunito({ subsets: ["latin"] });
+const TittleFont = Permanent_Marker({ weight: "400", subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Create Next App",

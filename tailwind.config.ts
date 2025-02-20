@@ -15,6 +15,10 @@ export default {
 				background: "var(--background)",
 				foreground: "var(--foreground)",
 			},
+			fontFamily: {
+				title: ["Permanent Marker"],
+				body: ["Nunito"],
+			},
 		},
 	},
 	plugins: [
@@ -24,7 +28,7 @@ export default {
 					// ...
 					colors: {
 						primary: {
-							DEFAULT: "#7B3FEA",
+							DEFAULT: "#6B30FA",
 						},
 					},
 				},
