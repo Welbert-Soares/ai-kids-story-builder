@@ -28,7 +28,7 @@ export default {
 					// ...
 					colors: {
 						primary: {
-							DEFAULT: "#6B30FA",
+							DEFAULT: "#422b77",
 						},
 					},
 				},

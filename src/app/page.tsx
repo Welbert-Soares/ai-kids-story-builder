@@ -1,12 +1,12 @@
-import { Header } from "@/components/Header";
-import { Button } from "@heroui/button";
+import { Hero } from "@/components/Hero"
+import { Header } from "@/components/Header"
 
 export default function Home() {
-	return (
-		<div className="bg-[#cfcaff]">
-			<Header />
+  return (
+    <div className="bg-[#c6c4f7]">
+      <Header />
 
-			{/* Hero */}
-		</div>
-	);
+      <Hero />
+    </div>
+  )
 }
