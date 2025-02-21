@@ -42,7 +42,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <Navbar maxWidth="full" onMenuOpenChange={setIsMenuOpen}>
+    <Navbar maxWidth="full" onMenuOpenChange={setIsMenuOpen} >
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
@@ -71,7 +71,7 @@ const Header = () => {
       <NavbarContent justify="end">
         <Link href={'/dashboard'}>
           <Button color="primary">
-            {isSignedIn ? "Minha Conta" : "Cadastrar"}
+            {isSignedIn ? "Minha Conta" : "Entrar"}
           </Button>
         </Link>
         <UserButton />

@@ -7,6 +7,7 @@ import { HeroUIProvider } from "@heroui/system";
 
 import type { Metadata } from "next";
 import "./globals.css";
+import { Header } from "@/components/Header";
 
 const MyAppFont = Nunito({ subsets: ["latin"] });
 const TittleFont = Permanent_Marker({ weight: "400", subsets: ["latin"] })
@@ -33,6 +34,7 @@ export default function RootLayout({
           }}
         >
           <HeroUIProvider>
+            <Header />
             {children}
           </HeroUIProvider>
         </ClerkProvider>
