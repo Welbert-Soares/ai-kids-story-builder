@@ -15,8 +15,11 @@ import {
   NavbarMenuItem,
 } from "@heroui/navbar";
 import { Button } from "@heroui/button";
+import { UserButton, useUser } from "@clerk/nextjs";
 
 const Header = () => {
+  const { user, isSignedIn } = useUser();
+
   const MenuList = [
     {
       name: "Início",
@@ -56,6 +59,7 @@ const Header = () => {
       <NavbarContent justify="center" className="hidden sm:flex">
         {MenuList.map((item, index) => (
           <NavbarItem
+            // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
             key={index}
             className="text-xl text-primary font-medium hover:underline ml-2"
           >
@@ -65,11 +69,17 @@ const Header = () => {
       </NavbarContent>
 
       <NavbarContent justify="end">
-        <Button color="primary">Entrar</Button>
+        <Link href={'/dashboard'}>
+          <Button color="primary">
+            {isSignedIn ? "Minha Conta" : "Cadastrar"}
+          </Button>
+        </Link>
+        <UserButton />
       </NavbarContent>
 
       <NavbarMenu>
         {MenuList.map((item, index) => (
+          // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
           <NavbarMenuItem key={index}>
             <Link href={item.path}>{item.name}</Link>
           </NavbarMenuItem>

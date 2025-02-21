@@ -1,7 +1,9 @@
+
 import { ClerkProvider } from "@clerk/nextjs";
 import { ptBR } from "@clerk/localizations";
-import { HeroUIProvider } from "@heroui/system";
 import { Nunito, Permanent_Marker } from "next/font/google";
+import { neobrutalism } from "@clerk/themes";
+import { HeroUIProvider } from "@heroui/system";
 
 import type { Metadata } from "next";
 import "./globals.css";
@@ -24,7 +26,12 @@ export default function RootLayout({
       <body
         className={MyAppFont.className}
       >
-        <ClerkProvider localization={ptBR}>
+        <ClerkProvider
+          localization={ptBR}
+          appearance={{
+            baseTheme: neobrutalism,
+          }}
+        >
           <HeroUIProvider>
             {children}
           </HeroUIProvider>
