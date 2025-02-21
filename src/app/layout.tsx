@@ -1,4 +1,5 @@
 import { ClerkProvider } from "@clerk/nextjs";
+import { ptBR } from "@clerk/localizations";
 import { HeroUIProvider } from "@heroui/system";
 import { Nunito, Permanent_Marker } from "next/font/google";
 
@@ -23,7 +24,7 @@ export default function RootLayout({
       <body
         className={MyAppFont.className}
       >
-        <ClerkProvider>
+        <ClerkProvider localization={ptBR}>
           <HeroUIProvider>
             {children}
           </HeroUIProvider>

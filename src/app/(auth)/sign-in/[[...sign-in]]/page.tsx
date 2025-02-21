@@ -1,6 +1,8 @@
 
-import { SignIn } from '@clerk/nextjs'
 import Image from 'next/image'
+import { SignIn } from '@clerk/nextjs'
+import { neobrutalism } from "@clerk/themes"
+
 
 export default function Page() {
   return (
@@ -9,7 +11,11 @@ export default function Page() {
         <Image src={'/login.png'} alt='login' width={700} height={1000} className='w-full' />
       </div>
       <div className='flex justify-center items-center h-screen order-first md:order-last'>
-        <SignIn />
+        <SignIn
+          appearance={{
+            baseTheme: neobrutalism,
+          }}
+        />
       </div>
     </div>
   )
