@@ -10,7 +10,11 @@ import {
   useDisclosure
 } from "@heroui/modal";
 
-const CustomLoader = () => {
+interface CustomLoaderProps {
+  isLoading: boolean
+}
+
+const CustomLoader = ({ isLoading }: CustomLoaderProps) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
@@ -19,28 +23,33 @@ const CustomLoader = () => {
   }, [])
 
   return (
-    <Modal
-      isDismissable={false}
-      isKeyboardDismissDisabled={true}
-      isOpen={isOpen}
-      onOpenChange={onOpenChange}
-    >
-      <ModalContent>
-        {(onClose) => (
-          <>
-            <ModalBody>
-              <Image
-                src={'/loader.gif'}
-                alt="Loading"
-                width={300}
-                height={300}
-                className="w-[200px] h-[200px]"
-              />
-            </ModalBody>
-          </>
-        )}
-      </ModalContent>
-    </Modal>
+    <div>
+      {isLoading &&
+        <Modal
+          isDismissable={false}
+          isKeyboardDismissDisabled={true}
+          isOpen={isOpen}
+          onOpenChange={onOpenChange}
+        >
+          <ModalContent>
+            {(onClose) => (
+              <>
+                <ModalBody className="p-10 flex w-full justify-center items-center">
+                  <Image
+                    src={'/loader.gif'}
+                    alt="Loading"
+                    width={300}
+                    height={300}
+                    className="w-[200px] h-[200px]"
+                  />
+                  <h2 className="font-bold text-2xl text-primary text-center">Gerando sua história...</h2>
+                </ModalBody>
+              </>
+            )}
+          </ModalContent>
+        </Modal>
+      }
+    </div>
   )
 }
 
