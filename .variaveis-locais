@@ -8,3 +8,7 @@ NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL=/
 NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL=/
 
 NEXT_PUBLIC_DATABASE_URL=
+
+NEXT_PUBLIC_GEMINI_API_KEY=
+
+NEXT_PUBLIC_CREATE_STORY_PROMPT=crie uma história infantil com descrição para crianças de {ageGroup}, história {storyType} e todas as imagens no estilo de {imageStyle}: {storySubject}, dê-me 5 capítulos, com prompt de texto de imagem detalhado para cada capítulo e prompt de imagem para capa de livro de história com nome de história, tudo no formato de campo JSON

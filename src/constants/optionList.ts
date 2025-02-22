@@ -1,6 +1,6 @@
 const bookOptionList = [
 	{
-		label: "Livro e Histórias",
+		label: "Livro de Histórias",
 		imageUrl: "/story.png",
 		isFree: true,
 	},
